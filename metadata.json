@@ -1,0 +1,5 @@
+{
+  "name": "AI Health Advisor",
+  "description": "An AI-powered personal health advisor that provides personalized recommendations for diet, activity, and medication based on user-logged data to help manage glucose levels.",
+  "requestFramePermissions": []
+}
