@@ -1,23 +1,16 @@
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
 
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      server: {
-        port: 3000,
-        host: '0.0.0.0',
-      },
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      }
-    };
-});
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [],
+  define: {
+    // According to Vite's documentation, the value of a 'define' entry
+    // should be a string literal. We use JSON.stringify to convert
+    // the object into a string. Vite will then perform a direct
+    // replacement of `process.env` in the code with this object,
+    // making the API key available in the browser.
+    'process.env': JSON.stringify({
+      API_KEY: process.env.API_KEY
+    })
+  }
+})

@@ -1,5 +1,7 @@
 {
-  "name": "AI Health Advisor",
-  "description": "An AI-powered personal health advisor that provides personalized recommendations for diet, activity, and medication based on user-logged data to help manage glucose levels.",
-  "requestFramePermissions": []
+  "name": "GlucoWeight - Diabetic Care & Weight Management",
+  "description": "A HIPAA-compliant simulated system for patient registration, personalized care plans, and clinician interoperability focusing on diabetic weight management.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
 }
